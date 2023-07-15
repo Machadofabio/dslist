@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @EqualsAndHashCode
 @Entity
 @Table(name = "tb_game")
@@ -30,7 +32,7 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") //ajuste da coluna no banco para não colocar limitação de 255 caracteres
     private String shortDescription;
     @Column(columnDefinition = "TEXT")
     private String longDescription;
